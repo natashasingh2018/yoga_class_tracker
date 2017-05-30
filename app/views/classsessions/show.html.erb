@@ -21,13 +21,13 @@
       <dd><%= @classsession.comments %></dd>
 
       <dt>Format</dt>
-      <dd><%= @classsession.format_id %></dd>
+      <dd><%= @classsession.format.title %></dd>
 
       <dt>Studio</dt>
-      <dd><%= @classsession.studio_id %></dd>
+      <dd><%= @classsession.studio.name %></dd>
 
-      <dt>User</dt>
-      <dd><%= @classsession.user_id %></dd>
+      <dt>Instructor</dt>
+      <dd><%= @classsession.user.email %></dd>
 
     </dl>
 

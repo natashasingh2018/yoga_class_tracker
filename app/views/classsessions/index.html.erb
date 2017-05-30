@@ -16,7 +16,7 @@
         <th>Comments</th>
         <th>Format</th>
         <th>Studio</th>
-        <th>User</th>
+        <th>Instructor</th>
         <th>Actions</th>
       </tr>
 
@@ -27,9 +27,9 @@
         <td><%= classsession.length %></td>
         <td><%= classsession.participants %></td>
         <td><%= classsession.comments %></td>
-        <td><%= classsession.format_id %></td>
-        <td><%= classsession.studio_id %></td>
-        <td><%= classsession.user_id %></td>
+        <td><%= classsession.format.title %></td>
+        <td><%= classsession.studio.name %></td>
+        <td><%= classsession.user.email %></td>
         <td>
           <a href="/classsessions/<%= classsession.id %>" class="btn btn-primary">Show</a>
           <a href="/classsessions/<%= classsession.id %>/edit" class="btn btn-warning">Edit</a>

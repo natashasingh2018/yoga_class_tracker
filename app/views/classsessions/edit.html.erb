@@ -25,6 +25,25 @@
         </label>
 
         <input type="text" id="happened_at" name="happened_at" placeholder="Happened at" class="form-control" value="<%= @classsession.happened_at %>">
+
+        <!-- <input type='text' class="form-control" name="happened_at" id="happened_at">
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+
+        <script type="text/javascript">
+          $(function () {
+            $('#datetimepicker1').datetimepicker();
+          });
+        </script>
+
+        <script>
+  $(function () {
+    $('#datetimepicker1').datetimepicker({
+      defaultDate: "<%= @classsession.happened_at.strftime("%m/%d/%y at %l:%M%P") %>"
+    });
+  });
+</script> -->
       </div>
 
       <!-- Label and input for theme -->

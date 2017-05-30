@@ -85,7 +85,9 @@
       Format
     </label>
 
-    <input type="text" id="format_id" name="format_id" placeholder="Format" class="form-control" value="<%= @classsession.format_id %>">
+    <!-- <input type="text" id="format_id" name="format_id" placeholder="Format" class="form-control" value="<%= @classsession.format_id %>"> -->
+
+    <%= select_tag(:format_id, options_from_collection_for_select(Format.all, :id, :title, @classsession.format_id), :class => "form-control") %>
   </div>
 
   <!-- Label and input for studio_id -->
@@ -94,7 +96,9 @@
       Studio
     </label>
 
-    <input type="text" id="studio_id" name="studio_id" placeholder="Studio" class="form-control" value="<%= @classsession.studio_id %>">
+    <!-- <input type="text" id="studio_id" name="studio_id" placeholder="Studio" class="form-control" value="<%= @classsession.studio_id %>"> -->
+<%= select_tag(:studio_id, options_from_collection_for_select(Studio.all, :id, :name, @classsession.format_id), :class => "form-control") %>
+
   </div>
 
   <!-- Label and input for user_id -->
@@ -103,7 +107,9 @@
       User
     </label>
 
-    <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @classsession.user_id %>">
+    <!-- <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @classsession.user_id %>"> -->
+
+    <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email, @classsession.user_id), :class => "form-control") %>
   </div>
 
   <button class="btn btn-success">
