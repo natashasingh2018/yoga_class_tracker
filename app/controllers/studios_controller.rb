@@ -8,6 +8,13 @@ class StudiosController < ApplicationController
   def show
     @studio = Studio.find(params[:id])
 
+    street_address = @studio.location
+  input = street_address.gsub(" ","+")
+  mapurl = "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyB_nAWVr-18Oi_XoadzVHmNT2vevvJfev4&address="+input
+  map_parsed_data = JSON.parse(open(mapurl).read)
+  @latitude = map_parsed_data["results"][0]["geometry"]["location"]["lat"]
+  @longitude = map_parsed_data["results"][0]["geometry"]["location"]["lng"]
+
     render("studios/show.html.erb")
   end
 
