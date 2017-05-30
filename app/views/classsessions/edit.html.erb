@@ -88,7 +88,7 @@
           Format
         </label>
 
-        <input type="text" id="format_id" name="format_id" placeholder="Format" class="form-control" value="<%= @classsession.format_id %>">
+        <input type="text" id="format_id" name="format_id" placeholder="Format" class="form-control" value="<%= @classsession.format.title %>">
       </div>
 
       <!-- Label and input for studio_id -->
@@ -97,7 +97,7 @@
           Studio
         </label>
 
-        <input type="text" id="studio_id" name="studio_id" placeholder="Studio" class="form-control" value="<%= @classsession.studio_id %>">
+        <input type="text" id="studio_id" name="studio_id" placeholder="Studio" class="form-control" value="<%= @classsession.studio.name %>">
       </div>
 
       <!-- Label and input for user_id -->
@@ -106,7 +106,7 @@
           User
         </label>
 
-        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @classsession.user_id %>">
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @classsession.user.email %>">
       </div>
 
       <button class="btn btn-warning">
