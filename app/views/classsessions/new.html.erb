@@ -9,7 +9,7 @@
 <% end %>
 
 <div class="page-header">
-  <h3>Add Classsession</h3>
+  <h3>Add Class Session</h3>
 </div>
 
 <div class="row">
@@ -21,7 +21,7 @@
       <!-- Label and input for happened_at -->
       <div class="form-group">
         <label for="happened_at" class="control-label">
-          Happened at
+          Date and Time
         </label>
 
         <input type="text" id="happened_at" name="happened_at" placeholder="Happened at" class="form-control" value="<%= @classsession.happened_at %>">
@@ -39,7 +39,7 @@
       <!-- Label and input for length -->
       <div class="form-group">
         <label for="length" class="control-label">
-          Length
+          Length (minutes)
         </label>
 
         <input type="text" id="length" name="length" placeholder="Length" class="form-control" value="<%= @classsession.length %>">
@@ -91,7 +91,7 @@
       </div>
 
       <button class="btn btn-success">
-        Create Classsession
+        Create Class Session
       </button>
       or
       <a href="/classsessions">Cancel</a>
