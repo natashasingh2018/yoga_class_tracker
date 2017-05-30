@@ -1,0 +1,41 @@
+<h1> My Teaching Stats </h1>
+
+<% @participantcount = 0 %>
+<% @classsessions.each do | classsession | %>
+  <% if current_user.id == classsession.user_id %>
+  <% @participantcount = @participantcount + classsession.participants %>
+  <% end %>
+  <% end %>
+
+
+<% @minutecount = 0 %>
+<% @classsessions.each do | classsession | %>
+  <% if current_user.id == classsession.user_id %>
+  <% @minutecount = @minutecount + classsession.length %>
+  <% end %>
+  <% end %>
+
+  <% @classcount = 0 %>
+  <% @classsessions.each do | classsession | %>
+    <% if current_user.id == classsession.user_id %>
+    <% @classcount = @classcount + 1 %>
+    <% end %>
+    <% end %>
+
+
+<div class="row">
+  <div class="col-md-12 mb-1">
+    <dl class="dl-horizontal">
+      <dt>Classes taught so far:</dt>
+      <dd><%= @classcount %></dd>
+      <dt>Students taught so far:</dt>
+      <dd><%= @participantcount %></dd>
+      <dt>Average class size:</dt>
+      <dd> <%= @participantcount/@classcount %></dd>
+      <dt>Minutes taught so far:</dt>
+      <dd><%= @minutecount %>, alternatively <%= @minutecount/60.round(2) %> hours</dd>
+      <dt>Average class length:</dt>
+      <dd><%= @minutecount/@classcount %> minutes</dd>
+    </dl>
+  </div>
+</div>

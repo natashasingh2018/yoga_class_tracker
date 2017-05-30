@@ -20,8 +20,11 @@
         <th>Actions</th>
       </tr>
 
+
+
       <% @classsessions.each do |classsession| %>
       <tr>
+        <% if classsession.user_id == current_user.id %>
         <td><%= classsession.happened_at %></td>
         <td><%= classsession.theme %></td>
         <td><%= classsession.length %></td>
@@ -35,8 +38,10 @@
           <a href="/classsessions/<%= classsession.id %>/edit" class="btn btn-warning">Edit</a>
           <a href="/delete_classsession/<%= classsession.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
         </td>
+          <% end %>
       </tr>
       <% end %>
+
     </table>
   </div>
 </div>
