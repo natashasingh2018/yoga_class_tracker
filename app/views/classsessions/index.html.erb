@@ -1,7 +1,7 @@
 <div class="page-header">
   <h1>
-    Class Sessions
-    <a href="/classsessions/new" class="btn btn-lg btn-success">New Class Session</a>
+    My Classes
+    <a href="/classsessions/new" class="btn btn-lg btn-success">New Class</a>
   </h1>
 </div>
 
@@ -16,7 +16,7 @@
         <th>Comments</th>
         <th>Format</th>
         <th>Studio</th>
-        <th>Instructor</th>
+        <!-- <th>Instructor</th> -->
         <th>Actions</th>
       </tr>
 
@@ -32,7 +32,7 @@
         <td><%= classsession.comments %></td>
         <td><%= classsession.format.title %></td>
         <td><%= classsession.studio.name %></td>
-        <td><%= classsession.user.email %></td>
+        <!-- <td><%= classsession.user.email %></td> -->
         <td>
           <a href="/classsessions/<%= classsession.id %>" class="btn btn-primary">Show</a>
           <a href="/classsessions/<%= classsession.id %>/edit" class="btn btn-warning">Edit</a>
