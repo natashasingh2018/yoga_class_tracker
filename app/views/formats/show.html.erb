@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h3>Format #<%= @format.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Title</dt>
+      <dd><%= @format.title %></dd>
+
+      <dt>Description</dt>
+      <dd><%= @format.description %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/formats" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/formats/<%= @format.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_format/<%= @format.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

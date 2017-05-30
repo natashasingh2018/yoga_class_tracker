@@ -1,0 +1,100 @@
+<!-- Validation failure messages -->
+<% if @classsession.errors.any? %>
+  <% @classsession.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Classsession #<%= @classsession.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_classsession/<%= @classsession.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for happened_at -->
+      <div class="form-group">
+        <label for="happened_at" class="control-label">
+          Happened at
+        </label>
+
+        <input type="text" id="happened_at" name="happened_at" placeholder="Happened at" class="form-control" value="<%= @classsession.happened_at %>">
+      </div>
+
+      <!-- Label and input for theme -->
+      <div class="form-group">
+        <label for="theme" class="control-label">
+          Theme
+        </label>
+
+        <textarea id="theme" name="theme" placeholder="Theme" class="form-control" rows="3"><%= @classsession.theme %></textarea>
+      </div>
+
+      <!-- Label and input for length -->
+      <div class="form-group">
+        <label for="length" class="control-label">
+          Length
+        </label>
+
+        <input type="text" id="length" name="length" placeholder="Length" class="form-control" value="<%= @classsession.length %>">
+      </div>
+
+      <!-- Label and input for participants -->
+      <div class="form-group">
+        <label for="participants" class="control-label">
+          Participants
+        </label>
+
+        <input type="text" id="participants" name="participants" placeholder="Participants" class="form-control" value="<%= @classsession.participants %>">
+      </div>
+
+      <!-- Label and input for comments -->
+      <div class="form-group">
+        <label for="comments" class="control-label">
+          Comments
+        </label>
+
+        <textarea id="comments" name="comments" placeholder="Comments" class="form-control" rows="3"><%= @classsession.comments %></textarea>
+      </div>
+
+      <!-- Label and input for format_id -->
+      <div class="form-group">
+        <label for="format_id" class="control-label">
+          Format
+        </label>
+
+        <input type="text" id="format_id" name="format_id" placeholder="Format" class="form-control" value="<%= @classsession.format_id %>">
+      </div>
+
+      <!-- Label and input for studio_id -->
+      <div class="form-group">
+        <label for="studio_id" class="control-label">
+          Studio
+        </label>
+
+        <input type="text" id="studio_id" name="studio_id" placeholder="Studio" class="form-control" value="<%= @classsession.studio_id %>">
+      </div>
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @classsession.user_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Classsession
+      </button>
+      or
+      <a href="/classsessions/<%= @classsession.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

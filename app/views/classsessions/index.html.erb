@@ -1,0 +1,42 @@
+<div class="page-header">
+  <h1>
+    Classsessions
+    <a href="/classsessions/new" class="btn btn-lg btn-success">New Classsession</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Happened at</th>
+        <th>Theme</th>
+        <th>Length</th>
+        <th>Participants</th>
+        <th>Comments</th>
+        <th>Format</th>
+        <th>Studio</th>
+        <th>User</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @classsessions.each do |classsession| %>
+      <tr>
+        <td><%= classsession.happened_at %></td>
+        <td><%= classsession.theme %></td>
+        <td><%= classsession.length %></td>
+        <td><%= classsession.participants %></td>
+        <td><%= classsession.comments %></td>
+        <td><%= classsession.format_id %></td>
+        <td><%= classsession.studio_id %></td>
+        <td><%= classsession.user_id %></td>
+        <td>
+          <a href="/classsessions/<%= classsession.id %>" class="btn btn-primary">Show</a>
+          <a href="/classsessions/<%= classsession.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_classsession/<%= classsession.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
