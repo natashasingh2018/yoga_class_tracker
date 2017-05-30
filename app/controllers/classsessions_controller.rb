@@ -20,6 +20,7 @@ class ClasssessionsController < ApplicationController
   def create
     @classsession = Classsession.new
 
+    #@classsession.happened_at = Chronic.parse(params[:happened_at])
     @classsession.happened_at = params[:happened_at]
     @classsession.theme = params[:theme]
     @classsession.length = params[:length]

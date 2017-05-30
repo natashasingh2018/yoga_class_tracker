@@ -8,6 +8,8 @@ class Classsession < ApplicationRecord
 
   validates :participants, :presence => true
 
+  validates :happened_at, :presence => true
+
   validates :length, :numericality => { :greater_than => 0 }
 
   validates :length, :presence => true
