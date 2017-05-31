@@ -7,7 +7,6 @@
   <% end %>
   <% end %>
 
-
 <% @minutecount = 0 %>
 <% @classsessions.each do | classsession | %>
   <% if current_user.id == classsession.user_id %>
@@ -22,6 +21,14 @@
     <% end %>
     <% end %>
 
+  <% if @classcount == 0 %>
+  <% @averagesize = 0 %>
+  <% @averagelength = 0 %>
+  <% else %>
+  <% @averagesize = @participantcount/@classcount %>
+  <% @averagelength = @minutecount/@classcount %>
+  <% end %>
+
 
 <div class="row">
   <div class="col-md-12 mb-1">
@@ -31,11 +38,11 @@
       <dt>Students taught so far:</dt>
       <dd><%= @participantcount %></dd>
       <dt>Average class size:</dt>
-      <dd> <%= @participantcount/@classcount %></dd>
+      <dd> <%= @averagesize %></dd>
       <dt>Minutes taught so far:</dt>
       <dd><%= @minutecount %>, alternatively <%= @minutecount/60.round(2) %> hours</dd>
       <dt>Average class length:</dt>
-      <dd><%= @minutecount/@classcount %> minutes</dd>
+      <dd><%= @averagelength %> minutes</dd>
     </dl>
   </div>
 </div>

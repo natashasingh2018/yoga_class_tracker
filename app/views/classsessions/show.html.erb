@@ -6,7 +6,7 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Date and Time</dt>
-      <dd><%= @classsession.happened_at %></dd>
+      <dd><%= @classsession.happened_at.strftime('%A, %B %e, %Y at %l:%M %P') %></dd>
 
       <dt>Theme</dt>
       <dd><%= @classsession.theme %></dd>

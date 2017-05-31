@@ -25,7 +25,7 @@
       <% @classsessions.each do |classsession| %>
       <tr>
         <% if classsession.user_id == current_user.id %>
-        <td><%= classsession.happened_at %></td>
+        <td><%= classsession.happened_at.strftime('%A, %m/%d/%y at %l:%M %P') %></td>
         <td><%= classsession.theme %></td>
         <td><%= classsession.length %></td>
         <td><%= classsession.participants %></td>
