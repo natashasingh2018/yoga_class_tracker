@@ -1,3 +1,5 @@
+
+
 <div class="page-header">
   <h3>Studio "<%= @studio.name %>"</h3>
 </div>
@@ -37,3 +39,16 @@ insert map here
     </div>
   </div>
 </div>
+
+<div id="map"></div>
+<script>
+  var map;
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: <%= @latitude %>, lng: <%= @longitude %>},
+      zoom: 8
+    });
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6Q8T-Q51aSFadFfohlbcdHG8R9z2pwcc&callback=initMap"
+async defer></script>
