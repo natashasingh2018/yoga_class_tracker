@@ -19,6 +19,7 @@
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
       <!-- Label and input for happened_at -->
+
       <!-- <div class="form-group">
       <label for="happened_at" class="control-label">
       Date and Time
@@ -37,6 +38,8 @@
     </span>
   </div>
 
+  <!-- Javascript code for the date time -->
+
   <script type="text/javascript">
   $(function () {
     $('#datetimepicker1').datetimepicker();
@@ -49,7 +52,7 @@
       Theme
     </label>
 
-    <textarea id="theme" name="theme" placeholder="Theme" class="form-control" rows="3"><%= @classsession.theme %></textarea>
+    <textarea id="theme" name="theme" placeholder="Theme" class="form-control" rows="1"><%= @classsession.theme %></textarea>
   </div>
 
   <!-- Label and input for length -->
