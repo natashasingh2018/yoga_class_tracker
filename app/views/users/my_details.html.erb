@@ -2,7 +2,11 @@
 
 <%= pie_chart Format.group(:title).count %>
 
-<%= column_chart Studio.group(:name).count %>
+<%= pie_chart Classsession.group(:format_id).count %>
+
+<%= column_chart Studio.group(:name).count, ytitle: "Count" %>
+
+<%= column_chart Classsession.group(:format_id).average(:length), ytitle: "Duration" %>
 
 <% @participantcount = 0 %>
 <% @classsessions.each do | classsession | %>
