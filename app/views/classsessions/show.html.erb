@@ -21,15 +21,19 @@
       <dd><%= @classsession.comments %></dd>
 
       <dt>Format</dt>
-      <dd><%= @classsession.format.title %></dd>
+      <dd>
+      <a href="/formats/<%= @classsession.format.id %>"> <%= @classsession.format.title %></a>
+      </dd>
 
       <dt>Studio</dt>
-      <dd><%= @classsession.studio.name %></dd>
+      <dd><a href="/studios/<%= @classsession.studio.id %>"> <%= @classsession.studio.name %></a></dd>
+
 
       <!-- <dt>Instructor</dt>
       <dd><%= @classsession.user.email %></dd> -->
 
     </dl>
+
 
     <div class="btn-group btn-group-justified">
       <a href="/classsessions" class="btn btn-primary">

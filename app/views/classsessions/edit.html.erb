@@ -34,13 +34,22 @@
       </div>
 
 <!-- Javascript code for the date time -->
-    <script>
-     $(function () {
-       $('#datetimepicker1').datetimepicker({
-         defaultDate: "<%= @classsession.happened_at.strftime('%B %e, %Y at %l:%M %P') %>"
-       });
-     });
-    </script>
+
+<script>
+ $(function () {
+   $('#datetimepicker1').datetimepicker({
+     defaultDate: "<%= @classsession.happened_at.strftime('%B %e, %Y at %l:%M %P') %>"
+   });
+ });
+</script>
+
+<script type="text/javascript">
+$(function () {
+  $('#datetimepicker1').datetimepicker();
+});
+</script>
+
+
 
       <!-- Label and input for theme -->
       <div class="form-group">
