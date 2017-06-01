@@ -1,5 +1,9 @@
 <h1> My Teaching Stats </h1>
 
+<%= pie_chart Format.group(:title).count %>
+
+<%= column_chart Studio.group(:name).count %>
+
 <% @participantcount = 0 %>
 <% @classsessions.each do | classsession | %>
   <% if current_user.id == classsession.user_id %>
