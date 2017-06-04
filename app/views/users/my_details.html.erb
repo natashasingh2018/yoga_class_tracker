@@ -1,4 +1,6 @@
-<h1> My Teaching Stats </h1>
+<div class="page-header">
+  <h3>My Teaching Stats</h3>
+</div>
 
 <% @participantcount = 0 %>
 <% @classsessions.each do | classsession | %>
@@ -31,15 +33,15 @@
 
 
 <div class="row">
-  <div class="col-md-12 mb-1">
+  <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
-      <dt>Count of Classes by Type</dt>
+      <dt>Class Count:</dt>
       <dd><%= pie_chart Classsession.where(:user_id => current_user.id).joins(:format).group(:title).count %></dd>
-      <dt>Average Duration of Classes by Type</dt>
-      <dd><%= column_chart Classsession.where(:user_id => current_user.id).joins(:format).group(:title).average(:length), ytitle: "Duration (min)" %></dd>
+      <dt>Class Length:</dt>
+      <dd><%= column_chart Classsession.where(:user_id => current_user.id).joins(:format).group(:title).average(:length), ytitle: "Average Duration (min)" %></dd>
       <dt>Classes taught:</dt>
       <dd><%= @classcount %></dd>
-      <dt>Students (non-unique) taught:</dt>
+      <dt>Students taught:</dt>
       <dd><%= @participantcount %></dd>
       <dt>Avg class size:</dt>
       <dd> <%= @averagesize %></dd>

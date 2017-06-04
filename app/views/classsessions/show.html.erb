@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h3>Class Session #<%= @classsession.id %></h3>
+  <h3>Class Session Details</h3>
 </div>
 
 <div class="row">
@@ -17,9 +17,6 @@
       <dt>Participants</dt>
       <dd><%= @classsession.participants %></dd>
 
-      <dt>Comments</dt>
-      <dd><%= @classsession.comments %></dd>
-
       <dt>Format</dt>
       <dd>
       <a href="/formats/<%= @classsession.format.id %>"> <%= @classsession.format.title %></a>
@@ -28,7 +25,9 @@
       <dt>Studio</dt>
       <dd><a href="/studios/<%= @classsession.studio.id %>"> <%= @classsession.studio.name %></a></dd>
 
-
+      <dt>Comments</dt>
+      <dd><%= @classsession.comments %></dd>
+      
       <!-- <dt>Instructor</dt>
       <dd><%= @classsession.user.email %></dd> -->
 

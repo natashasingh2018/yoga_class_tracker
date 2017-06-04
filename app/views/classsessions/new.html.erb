@@ -18,25 +18,49 @@
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-      <!-- Label and input for happened_at -->
 
-      <!-- <div class="form-group">
-      <label for="happened_at" class="control-label">
-      Date and Time
+
+  <!-- Label and input for format_id -->
+  <div class="form-group">
+    <label for="format_id" class="control-label">
+      Format or <a href="/formats/new">Missing Format? Add it here!</a>
     </label>
 
-    <input type="text" id="happened_at" name="happened_at" placeholder="Happened at" class="form-control" value="<%= @classsession.happened_at %>">
-  </div> -->
+    <!-- <input type="text" id="format_id" name="format_id" placeholder="Format" class="form-control" value="<%= @classsession.format_id %>"> -->
 
-  <div class='input-group date' id='datetimepicker1'>
-    <label for="happened_at" class="control-label">
-      Date and Time
-    </label>
-    <input type='text' class="form-control" name="happened_at" id="happened_at">
-    <span class="input-group-addon">
-      <span class="glyphicon glyphicon-calendar"></span>
-    </span>
+    <%= select_tag(:format_id, options_from_collection_for_select(Format.all, :id, :title, @classsession.format_id), :class => "form-control") %>
   </div>
+
+  <!-- Label and input for studio_id -->
+  <div class="form-group">
+    <label for="studio_id" class="control-label">
+      Studio or <a href="/studios/new">Missing Studio? Add it here!</a>
+    </label>
+
+    <!-- <input type="text" id="studio_id" name="studio_id" placeholder="Studio" class="form-control" value="<%= @classsession.studio_id %>"> -->
+  <%= select_tag(:studio_id, options_from_collection_for_select(Studio.all, :id, :name, @classsession.format_id), :class => "form-control") %>
+
+  </div>
+
+  <!-- Label and input for happened_at -->
+
+  <!-- <div class="form-group">
+  <label for="happened_at" class="control-label">
+  Date and Time
+</label>
+
+<input type="text" id="happened_at" name="happened_at" placeholder="Happened at" class="form-control" value="<%= @classsession.happened_at %>">
+</div> -->
+
+<div class='input-group date' id='datetimepicker1'>
+<label for="happened_at" class="control-label">
+  Date and Time
+</label>
+<input type='text' class="form-control" name="happened_at" id="happened_at">
+<span class="input-group-addon">
+  <span class="glyphicon glyphicon-calendar"></span>
+</span>
+</div>
 
   <!-- Javascript code for the date time -->
 
@@ -82,27 +106,7 @@
     <textarea id="comments" name="comments" placeholder="Comments" class="form-control" rows="3"><%= @classsession.comments %></textarea>
   </div>
 
-  <!-- Label and input for format_id -->
-  <div class="form-group">
-    <label for="format_id" class="control-label">
-      Format
-    </label>
 
-    <!-- <input type="text" id="format_id" name="format_id" placeholder="Format" class="form-control" value="<%= @classsession.format_id %>"> -->
-
-    <%= select_tag(:format_id, options_from_collection_for_select(Format.all, :id, :title, @classsession.format_id), :class => "form-control") %>
-  </div>
-
-  <!-- Label and input for studio_id -->
-  <div class="form-group">
-    <label for="studio_id" class="control-label">
-      Studio
-    </label>
-
-    <!-- <input type="text" id="studio_id" name="studio_id" placeholder="Studio" class="form-control" value="<%= @classsession.studio_id %>"> -->
-<%= select_tag(:studio_id, options_from_collection_for_select(Studio.all, :id, :name, @classsession.format_id), :class => "form-control") %>
-
-  </div>
 
   <!-- Label and input for user_id -->
   <div class="form-group">
